@@ -1,19 +1,14 @@
 import React from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
-import Signin from '../../components/auth/signin';
+import authAPI from '../../api/auth/authAPI';
 import Signup from '../../components/auth/signup';
 import { ISignupForm } from '../../models/auth/authModel';
 
 
 const AuthContainer = () => {
-    const handleSignup = (data: ISignupForm) => {
-        fetch('http://localhost:5000/api/auth/signup', {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        }).then(res => res.json()).then(res => console.log(res)).catch(err => console.log(err))
+    const handleSignup = async (data: ISignupForm) => {
+      const result = await authAPI.handleSignupRequest(data);
+      console.log(result);
+      
     };
 
 
