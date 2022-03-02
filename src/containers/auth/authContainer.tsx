@@ -4,8 +4,6 @@ import { handleSignupRequest } from '../../api/auth/authAPI';
 
 import Signup from '../../components/auth/signup';
 import { ISignupForm } from '../../models/auth/authModel';
-import { HTTPError } from '../../models/error/httpError';
-
 
 
 const AuthContainer = () => {

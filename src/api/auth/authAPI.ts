@@ -21,9 +21,5 @@ export const handleSignupRequest = async (signupData: ISignupForm) => {
     }
     return response.json();
     
-    
-
-    
-    
 };
 
